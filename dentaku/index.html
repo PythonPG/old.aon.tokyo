@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>電卓</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <form name="dentaku" action="">
+  <table style="display:inline-block"> 
+    <tr style="margin-bottom:20px;"><td colspan="3"><input name="readvalue" id="readvalue" type="text" size=15 value="0" style="height:25px;text-align:right;font-size:100%;"></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(1);"><img src="img/1.jpg"></a></td><td><a href="#"  onclick="NumPress(2);"><img src="img/2.jpg"></a></td><td><a href="#"  onclick="NumPress(3);"><img src="img/3.jpg"></a></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(4);"><img src="img/4.jpg"></a></td><td><a href="#"  onclick="NumPress(5);"><img src="img/5.jpg"></a></td><td><a href="#"  onclick="NumPress(6);"><img src="img/6.jpg"></a></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(7);"><img src="img/7.jpg"></a></td><td><a href="#"  onclick="NumPress(8);"><img src="img/8.jpg"></a></td><td><a href="#"  onclick="NumPress(9);"><img src="img/9.jpg"></a></td></tr>
+    <tr><td><a href="#"  onclick="NumPress(0);"><img src="img/0.jpg"></a></td><td><a href="#"  onclick="Shosuten();"><img src="img/DOT.jpg"></a></td><td><a href="#"  onclick="Operation('=');"><img src="img/=.jpg"></a></td></tr>
+  </table>
+  <table style="display:inline-block"> 
+    <tr><td></td><td><a href="#"  onclick="Clear();"><img src="img/C.jpg"></a></td><td><a href="#"  onclick="ClearEntry();"><img src="img/CE.jpg"></a></td><td><a href="#"  onclick="PlusMinus();"><img src="img/+-.jpg"></a></td></tr>
+    <tr><td></td><td><a href="#"  onclick="Operation('%');"><img src="img/AMARI.jpg"></a></td><td><a href="#"  onclick="Percent();"><img src="img/Percent.jpg"></a></td><td></td></tr>
+    <tr><td></td><td><a href="#"  onclick="Operation('+');"><img src="img/+.jpg"></a></td><td><a href="#"  onclick="Operation('-');"><img src="img/-.jpg"></a></td><td></td></tr>
+    <tr><td></td><td><a href="#"  onclick="Operation('*');"><img src="img/X.jpg"></a></td><td><a href="#"  onclick="Operation('/');"><img src="img/WARU.jpg"></a></td><td></td></tr>
+  </table>
+  </form>
+  <p>ー（マイナス）を含んだ計算は、+/-を用いて行います。</p>
+  <p>例）-10 × -10 を行う場合、「10 → +/- → X → 10 → +/- → = 」の順に入力します。</p>
+<script src="js/main.js"></script>
+</body>
+</html>

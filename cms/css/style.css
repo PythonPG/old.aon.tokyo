@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+.card-header{
+  background-color:#032138;
+  color:#fff;
+}
+.navy{
+  background-color:#123D55 !important;
+}
+.card-body{
+  background-color:#123D55;
+  color:#fff;
+}
+.form-group a{
+  color:#fff;
+}
+.wood-body .form-group a{
+  color:#000;
+}
+
+.brown, .menu{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(86, 47, 18, 0.7),
+      #573216 7.5%,
+      rgba(86, 47, 18, 0.9) 10%
+    ),
+    linear-gradient(
+      90deg,
+      #7d522c,
+      #7d522c 0.1%,
+      #7d522c 0.4%,
+      #845d40 0.5%
+    );
+}
+
+.wood-header{
+  background:
+    linear-gradient(
+      90deg,
+      rgba(56, 17, 8, 0.7),
+      #573216 7.5%,
+      rgba(56, 17, 8, 0.9) 10%
+    ),
+    linear-gradient(
+      90deg,
+      #5d321c,
+      #5d321c 0.1%,
+      #5d321c 0.4%,
+      #643d20 0.5%
+    );
+}
+.wood-body,.list-group-item{
+  color:#000;
+  background:url('../img/wood.png') !important;
+}
+
+.list-group-item:hover{
+  color:#FFF;
+  border:3px solid #d7c088 !important;
+  background:
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      rgba(116, 77, 48, 0.7),
+      #573216 7.5%,
+      rgba(116, 77, 48, 0.9) 10%
+    ),
+    repeating-radial-gradient(
+      circle at -1000% 0%,
+      #573216,
+      #573216 0.1%,
+      #744d30 0.4%,
+      #744d30 0.5%
+    ) !important;
+}
+
+@media screen and (max-width: 768px) {
+  .text-md-center{
+    text-align: center !important;
+  }
+}

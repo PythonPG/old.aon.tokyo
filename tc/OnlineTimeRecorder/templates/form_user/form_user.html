@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>Welcome! Neovision Consulting</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static "css/reset.css" %}">
+        <link rel="stylesheet" href="{% static "css/nvc.css" %}">
+    </head>
+    <body>
+        <div id="container">
+        <header>
+            <ul id="head-menu">
+            	<ul id="head-menu-1">
+                	<li><a href="{% url 'user_login' %}">ユーザー管理・ログイン</a></li>
+                </ul>
+                {% comment %}
+                <ul id="head-menu-2">
+                	<li><a href="{% url 'time_login' %}">タイムレコーダー・ログイン</a></li>
+                </ul>
+                {% endcomment %}
+                <ul id="head-menu-3">
+                	<li><a href="{% url 'top' %}">TOP画面に戻る</a></li>
+                </ul>        
+            </ul>
+        </header>
+        <div id="side-bar">
+        <side>
+        </side>
+        <footer>
+	  <form method="post">{% csrf_token %}
+            <table>
+            	<ul id="main-menu">
+            		<ul id="main-menu-1">
+                	<h1>ユーザー登録</h1>
+                	</ul>
+			{{ form.errors }}
+			<tr>
+			  <ul id="main-s1"><td></td></ul>
+			  <ul id="main-s2"><td>{{ form.user_choice }}</td></ul>
+			</tr>
+                	<tr>
+                		<ul id="main-s1">
+            				<td>{{ form.phone.label }}</td>
+            			</ul>
+            		    <ul id="main-s2">
+			      <td>{{ form.phone }}</td>
+      			</ul>
+            		</tr>
+			{% comment %}
+               		<tr>
+            		    <ul id="main-s1">
+            		    	<td>■日付{{ current_date }}</td> 
+            			</ul>
+            			<ul id="main-s2">
+               				<td><input type="text" id="date" value="{{ current_date }}"></td> 
+               			</ul>
+               		</tr>
+			{% endcomment %}
+               		<tr>
+            		    <ul id="main-s1">
+            		    	<td>{{ form.password.label }}</td>
+            			</ul>
+            			<ul id="main-s2">
+				  <td>{{ form.password }}</td>
+               			</ul>
+               		</tr>
+               		<tr>
+            		    <ul id="main-s1">
+            		    	<td>{{ form.name_sei.label }}</td> 
+            			</ul>
+            			<ul id="main-s2">
+				  <td>{{ form.name_sei }}</td>
+               			</ul>
+               		</tr>
+			<tr>
+			  <ul id="mail-s1">
+			    <td>{{ form.name_namae.label }}</td>
+			  </ul>
+			  <ul id="main-s2">
+			    <td>{{ form.name_namae }}</td>
+			  </ul>
+			  </tr>
+			{% comment %}
+               		<tr>
+            		    <ul id="main-s1">
+            		    	<td>■出社時間（９：００）</td> 
+            			</ul>
+            			<ul id="main-s2">
+               				<td><input type="text" id="job_start" value="09:00"></td> 
+               			</ul>
+               		</tr>
+               		<tr>
+            		    <ul id="main-s1">
+            		    	<td>■退社時間（１８：００）</td> 
+            			</ul>
+            			<ul id="main-s2">
+               				<td><input type="text" id="job_end" value="18:00"></td> 
+               			</ul>
+               		</tr>
+               		<tr>
+            		    <ul id="main-s1">
+            		    	<td>■ステータス（出社）</td> 
+            			</ul>
+            			<ul id="main-s2">
+            				<td><input type="radio" name="q2" value="出社"  checked>出社
+                                <input type="radio" name="q2" value="退社"  >退社
+                                <input type="radio" name="q2" value="休暇"  >休暇 </td>
+					  	</ul>
+            		<!--  <td><input type="text" name="status" autocomplete="time"></td> -->
+               		</tr>
+			{% endcomment %}
+			  <td><input type="submit" value="登録"></td>
+                </ul>	
+            </table>
+	    </form>
+        </footer>
+
+	<table style="margin-top:20px;">
+	  <thead>
+	    <tr>
+	      <th>#</th>
+	      <th>電話番号</th>
+	      <th>性</th>
+	      <th>名</th>
+	      <th>master</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    {% for user in user_list %}
+	    <tr>
+	      <td>{{ forloop.counter }}</td>
+	      <td><a href="#">{{ user.phone }}</a></td>
+	      <td>{{ user.name_sei }}</td>
+	      <td>{{ user.name_namae }}</td>
+	      <td>{{ user.master }}</td>
+	      <td>
+		{% if not user.master %}
+		<button type="button" onclick="delUser({{ user.pk }});">削除</button></td>
+	        {% endif %}
+	    </tr>
+	    {% endfor %}
+	  </tbody>
+    </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script>
+      function delUser(id) {
+        $.get('{% url 'del_user' %}', {id: id}, function() {
+          location.reload();
+        });
+      }
+
+      $(function() {
+        $('#{{ form.user_choice.id_for_label }}').change(function () {
+          var userID = $(this).val();
+          var phone = '';
+          var password = '';
+          var sei = '';
+          var mei = '';
+          
+          if(userID == '1111111111') {
+            sei = '鈴木';
+            mei = '太郎';
+          } else if(userID == '2222222222') {
+            sei = '山下';
+            mei = '一郎';
+          } else if(userID == '3333333333') {
+            sei = '山田';
+            mei = '花子';
+          }
+
+          $('#{{ form.phone.id_for_label }}').val(userID);
+          $('#{{ form.password.id_for_label }}').val(userID);
+          $('#{{ form.name_sei.id_for_label }}').val(sei);
+          $('#{{ form.name_namae.id_for_label }}').val(mei);
+        });
+      });
+    </script>
+</html>

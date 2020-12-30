@@ -1,0 +1,134 @@
+.about-text2 {
+  color: #1E90FF;    
+}
+
+.menuText {
+    font-family: 'IdolwildRegular' , Verdana, Helvetica, Sans-Serif;
+/*　font-size: larger;　*/
+    font-size: 16px;
+    color: #ffffff;
+    position: relative;
+    vertical-align: middle;
+    text-align: center;
+    top: 40%;
+}
+
+span.moji{
+  color: #FFFFFF;
+}
+
+#dropmenu{
+  list-style-type: none;
+  width: 100%;
+  height: 80px;
+  margin: 5px auto 300px;
+  padding: 0;
+/*  background: #8a9b0f; */
+  background: #00ffff;
+/*  border-bottom: 5px solid #535d09; */
+  border-bottom: 5px solid #00ffff;
+  border-radius: 3px 3px 0 0;
+}
+#dropmenu li{
+  position: relative;
+  width: 13%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#dropmenu li a{
+  display: block;
+  margin: 0;
+  padding: 5px 0 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1;
+  text-decoration: none;
+}
+#dropmenu li:hover > a{
+/*  background: #6e7c0c; */
+  background: #87ceeb;
+  color: #40e0d0;
+}
+#dropmenu > li:hover > a{
+  border-radius: 3px 3px 0 0;
+}
+#dropmenu li ul{
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 0 3px 3px;
+}
+#dropmenu li:last-child ul{
+  left: -100%;
+  width: 100%
+}
+#dropmenu li ul li{
+  overflow: hidden;
+  width: 200%;
+  height: 0;
+  color: #fff;
+  -moz-transition: .2s;
+  -webkit-transition: .2s;
+  -o-transition: .2s;
+  -ms-transition: .2s;
+  transition: .2s;
+}
+#dropmenu li ul li a{
+  padding: 5px 5px;
+/*  background: #6e7c0c; */
+  background: #87cefa;
+  text-align: left;
+  font-size: 16px;
+  font-weight: normal;
+}
+#dropmenu li:hover ul li{
+  overflow: visible;
+  height: 38px;
+  border-top: 1px solid #7c8c0e;
+  border-bottom: 1px solid #616d0b;
+}
+#dropmenu li:hover ul li:first-child{
+  border-top: 0;
+}
+#dropmenu li:hover ul li:last-child{
+  border-bottom: 0;
+}
+#dropmenu li:hover ul li:last-child a{
+  border-radius: 0 0 3px 3px;
+}
+
+
+
+td {
+  list-style-type: none;
+  padding: 0px 10px 0px 10px;
+}
+
+table {
+    list-style-type: none;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 100%;
+}
+
+.dropdown:hover > .dropdown-menu{
+/*  display: block; */
+}
+
+.dropdown a {
+  background-color: #ffc200;
+  border-radius: 3px;
+  padding-left: 5px;
+  margin: 1px;
+}
+.dropdown-menu a {
+  background-color: #fffff0;
+  margin: auto;
+}
+
